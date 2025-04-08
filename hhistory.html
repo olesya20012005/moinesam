@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <title>МойНеСам</title>
+</head>
+<body>
+    <div class="container1">
+        <!-- Левое меню -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Логотип">
+                
+            </div>
+            <nav>
+                <div class="menu-buttons">
+                    <a href="#" class="button active">История заявок</a>
+                    <a href="history.html" class="button">Создать заявку</a>
+                </div>
+            </nav>
+            <a href="src/logout.php" class="logout">&larr; Выйти</a>
+        </aside>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>История заявок</h2>
+                <div class="user">
+                    <span><?= htmlspecialchars($userName) ?></span>
+                    <div class="user-avatar"></div>
+                </div>
+            </header>
+            <section class="request-history">
+                <?php if (empty($requests)): ?>
+                    <p class="no-requests">Заявки отсутствуют</p>
+                <?php else: ?>
+                    <?php foreach ($requests as $request): ?>
+                        <div class="request-row">
+                            <div class="request-item"><?= htmlspecialchars($request['service']) ?></div>
+                            <div class="request-date"><?= htmlspecialchars($request['app_date']) ?></div>
+                            <div class="request-status <?= strtolower($request['status']) ?>">
+                                <?= htmlspecialchars($request['status']) ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <title>МойНеСам</title>
+</head>
+<body>
+    <div class="container1" style="height: auto;">
+        <!-- Левое меню -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Логотип">
+            </div>
+            <nav>
+                <div class="menu-buttons">
+                    <a href="hhistory.html" class="button">История заявок</a>
+                    <a href="#" class="button active">Создать заявку</a>
+                </div>
+            </nav>
+            <a href="src/logout.php" class="logout">&larr; Выйти</a>
+        </aside>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Создать заявку</h2>
+                <div class="user">
+                    <span></span>
+                    <div class="user-avatar"></div>
+                </div>
+            </header>
+            <section class="request-form">
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label for="street">Улица <span class="required">*</span></label>
+                        <input type="text" id="street" name="street" placeholder="Укажите улицу" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="house">Дом (корпус)</label>
+                            <input type="text" id="house" name="house" placeholder="Дом (корпус)">
+                        </div>
+                        <div class="form-group">
+                            <label for="entrance">Подъезд</label>
+                            <input type="text" id="entrance" name="entrance" placeholder="Подъезд">
+                        </div>
+                        <div class="form-group">
+                            <label for="apartment">Квартира/помещение</label>
+                            <input type="text" id="apartment" name="apartment" placeholder="Квартира/помещение">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Номер телефона <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service_type">Вид услуги <span class="required">*</span></label>
+                        <select id="service_type" name="service_type" required>
+                            <option value="">Выберите вид услуги</option>
+                            <option value="Уборка квартиры/дома">Уборка квартиры/дома</option>
+                            <option value="Уборка офиса">Уборка офиса</option>
+                            <option value="Мытье окон/фасадов">Мытье окон/фасадов</option>
+                            <option value="Дезинфекция">Дезинфекция</option>
+                            <option value="Химчистка">Химчистка</option>
+                            <option value="Удаление сложных загрязнений">Удаление сложных загрязнений</option>
+                        </select>
+                        <label>
+                            <input type="checkbox" id="other_service" name="other_service"> Другая услуга
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="service_description">Услуга <span class="required">*</span></label>
+                        <textarea id="service_description" name="service_description" placeholder="Введите описание услуги" disabled></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Тип оплаты <span class="required">*</span></label>
+                        <div class="payment-options">
+                            <label>
+                                <input type="radio" name="payment_type" value="Наличные" required> Наличные
+                            </label>
+                            <label>
+                                <input type="radio" name="payment_type" value="Карта"> Банковская карта
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-button">Отправить заявку</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
